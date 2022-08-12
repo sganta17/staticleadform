@@ -1,0 +1,71 @@
+
+.redTxt{
+  color:red;
+}
+.form-group{
+  margin-bottom: 10px;
+}
+h2,.actions{
+  text-align: center;
+}
+.form-control {
+  box-shadow: none;
+  
+  width: 60%;
+  padding: 6px 12px;
+  font-size: 15px;
+  line-height: 1.22857143;
+  color: #777;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #bebebe;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+#lead-capture-form {
+  font-weight:bold;
+  margin: 23px auto 0 auto;
+  border-radius:10px;
+  width: 650px;
+  box-shadow:  0 0 2px 2px #d9d9d9;
+  padding: 10px;
+}
+
+label {
+  color: black;
+  margin-bottom: 10px;
+  padding-left:26px;
+    width:30%;
+    display:inline-block;
+  
+}
+.button-submit{
+  background-color: green;
+  width: 30%;
+  text-align: center;
+  color:white;
+  font-weight: 200;
+}
+
+.form-control { line-height: auto; }
+
+.form-check-label                       { margin-left: 10px }
+.form-check-input[type="radio"] + label { font-weight: 200 }
+
+form { margin:0 }
+
+.custom-control {
+  margin-bottom: 10px;
+}
+  .custom-control-label {
+    line-height: 1.6;
+    font-weight: 200;
+
+  }
+
