@@ -49,7 +49,7 @@
 
                 link.type = 'text/css';
 
-                link.href = '../LeadForm/stylesheets/_mass-mutual-' + clientname + '.css';
+                link.href = '../stylesheets/_mass-mutual-' + clientname + '.css';
 
                 // Append link element to HTML head
                 head.appendChild(link);
