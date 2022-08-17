@@ -262,6 +262,8 @@
                 let email = $("#email").val();
                 let address = $("#address").val();
                 let clientname = $("#clientName").val();
+                let modeOfComm = $('input[name="modeOfComm"]:checked').val();
+
 
                 let global = "";
 
@@ -289,7 +291,8 @@
                         "name": name,
                         "mobileNumber": mobileNumber,
                         "email": email,
-                        "address": address
+                        "address": address,
+                        "modeOfComm": modeOfComm
                     };
 
                     return $.ajax({
