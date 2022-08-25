@@ -262,8 +262,14 @@
                 let email = $("#email").val();
                 let address = $("#address").val();
                 let clientname = $("#clientName").val();
-                let modeOfComm = $('input[name="modeOfComm"]:checked').val();
+                var modeOfComm = new Array();
+                $('input[name="modeOfComm"]:checked').each(function () {
+                    modeOfComm.push($(this).val());
+                });
 
+                if (modeOfComm.length === 0) {
+                    modeOfComm.push('none');
+                }
 
                 let global = "";
 
@@ -280,7 +286,6 @@
                 }
 
 
-
                 if (global === false) {
                     $("#errorMessage").html("Fill missing mandatory fields");
                     return false;
@@ -292,21 +297,9 @@
                         "mobileNumber": mobileNumber,
                         "email": email,
                         "address": address,
-                        "modeOfComm": modeOfComm
+                        "modeOfComm": modeOfComm.toString()
                     };
 
-                    return $.ajax({
-                        url: "https://sm6i8t8xuk.execute-api.us-east-1.amazonaws.com/default/leadform",
-                        type: "POST",
-                        data: JSON.stringify(element),
-                        contentType: "application/json;charset=utf-8",
-                        dataType: 'text',
-                        success: function (data) {
-                            console.log("form submitted.");
-                            MM.showThankYouNote();
-                            MM.clearFormFields();
-                        }
-                    });
                 }
 
 
