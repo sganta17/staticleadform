@@ -300,6 +300,19 @@
                         "modeOfComm": modeOfComm.toString()
                     };
 
+                    return $.ajax({
+                        url: "https://sm6i8t8xuk.execute-api.us-east-1.amazonaws.com/default/leadform",
+                        type: "POST",
+                        data: JSON.stringify(element),
+                        contentType: "application/json;charset=utf-8",
+                        dataType: 'text',
+                        success: function (data) {
+                            console.log("form submitted.");
+                            MM.showThankYouNote();
+                            MM.clearFormFields();
+                        }
+                    });
+
                 }
 
 
