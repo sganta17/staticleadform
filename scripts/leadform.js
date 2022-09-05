@@ -253,10 +253,25 @@
                 $("#formDisplay").addClass("displayNone");
             },
 
+            this.getParameterByName = function (name, url) {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            },
+
             this.submitLead = function (event) {
                 event.preventDefault();
                 const url = document.referrer;
-                alert(url);
+
+                let source = MM.getParameterByName("utm_source", url);
+                let medium = MM.getParameterByName("utm_medium", url);
+                let campaign = MM.getParameterByName("utm_campaign", url);
+                let term = MM.getParameterByName("utm_term", url);
+                let content = MM.getParameterByName("utm_content", url);
+
                 let name = $("#name").val();
                 let mobileNumber = $("#mobileNumber").val();
                 let email = $("#email").val();
@@ -297,7 +312,12 @@
                         "mobileNumber": mobileNumber,
                         "email": email,
                         "address": address,
-                        "modeOfComm": modeOfComm.toString()
+                        "modeOfComm": modeOfComm.toString(),
+                        "source": source,
+                        "medium": medium,
+                        "campaign": campaign,
+                        "term": term,
+                        "content": content
                     };
 
                     return $.ajax({
