@@ -16,220 +16,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link href="../stylesheets/_mm-style.css" rel="stylesheet" />
+    <link href="../LeadForm/stylesheets/_mm-style.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+</head>
 
 <body>
     <main>
-        <div class="flex-column flex-md-row align-items-center bg-294">
-            <div class="container">
-                <div class="nav-padding">
-                    <div class="nav-logo">
-                        <a href="https://www.MassMutual.com" target="_blank" tabindex="1">
-                            <img src="https://mediaassets.massmutual.com/Client_Landing_Page/images/mm-logos/MassMutual-logo-landing.svg"
-                                alt="MassMutual" width="140" height="17" />
-                        </a>
+        <div style="height: 100%;">
+            <div class="flex-column flex-md-row align-items-center bg-294">
+                <div class="container">
+                    <div class="nav-padding">
+                        <div class="nav-logo">
+                            <a href="https://www.MassMutual.com" target="_blank" tabindex="1">
+                                <img src="https://mediaassets.massmutual.com/Client_Landing_Page/images/mm-logos/MassMutual-logo-landing.svg"
+                                    alt="MassMutual" width="140" height="17" />
+                            </a>
+                        </div>
+                        <div class="nav-text my-md-0">POC - Landing Page
+                        </div>
+                        <div class="clear">
+                        </div>
                     </div>
-                    <div class="nav-text my-md-0">POC - Landing Page
-                    </div>
-                    <div class="clear">
+                </div>
+            </div>
+            <div id="top" class="schedule-top-container">
+                <div class="container">
+                    <div class="schedule-right col-lg-4 col-md-4 col-sm-12 col-md-push-8">
+
+                        <iframe src="../LeadForm/leadform.html" style="height: 500px;width:430px;"></iframe>
                     </div>
                 </div>
             </div>
         </div>
-
-        <section id="top">
-            <div class="schedule-top-container">
-                <div class="">
-                    <div class="container">
-                        <div class="schedule-right col-lg-4 col-md-4 col-sm-12 col-md-push-8">
-                            <div class="shadow-box-white displayNone" style="height: 200px;" id="thankyouNote">
-                                Thank you for reaching us!! Financial professional will be in touch with you soon.
-
-                                <div style="padding-top:50px;float: right;">
-
-                                    <a tabindex="4" class="pull-left col-sm-24 paddingZero handpointer"
-                                        onclick="MM.showLeadForm();">
-                                        Back to Lead Form </a>
-
-                                </div>
-
-                            </div>
-                            <div class="shadow-box-white" id="formDisplay">
-                                <form class="full-width text-center" id="leadForm">
-
-                                    <div class="form-floating mb-3">
-                                        <select id="clientName" class="form-control" placeholder="Client Name"
-                                            onchange="MM.onChangeClientName()" required>
-                                            <option value="mm">MassMutual</option>
-                                            <option value="mmbu">MMBU</option>
-                                            <option value="mmjebit">Jebit</option>
-                                        </select>
-                                        <label for="clientName"><span class="redTxt">*</span>Choose Client</label>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="name" required="required"
-                                                onblur="MM.validateName('name')" placeholder="Enter Name" />
-                                            <label for="name" id="spanname"><span class="redTxt">*</span>Name</label>
-                                        </div>
-
-
-                                        <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="email"
-                                                onblur="MM.emailValidator('email')" placeholder="name@example.com">
-                                            <label for="email" id="spanemail"><span class="redTxt">*</span>Email
-                                                address</label>
-                                        </div>
-
-                                        <div class="form-floating mb-3" id="contactDiv">
-                                            <input type="text" class="form-control" id="mobileNumber"
-                                                pattern="[\(]\d{3}[\)] \d{3}[\-]\d{4}"
-                                                onblur="MM.phoneValidator('mobileNumber')"
-                                                placeholder="(123) 345 - 1234" />
-                                            <label for="mobileNumber" id="spanmobileNumber"><span id="contactMandatory"
-                                                    class="redTxt">*</span>Contact Number</label>
-                                        </div>
-
-                                        <div class="form-floating mb-3">
-                                            <input type="text" id="address" required="true"
-                                                class="form-control  leftsrch capitalize" value="" placeholder="Address"
-                                                tabindex="1" autocomplete="off" name="Address" maxlength="25" />
-                                            <input type="hidden" value="false" id="isAddressValid" />
-                                            <label for="address" id="spanAddress"><span id="addressMandatory"
-                                                    class="redTxt">*</span>Address</label>
-                                            <ul class="appt-list-pop appt-list-pop-custom" id="leadExistingAddress"
-                                                style="visibility: visible;"
-                                                onclick="this.style.visibility = 'hidden';MM.validateAddress();"
-                                                onmouseover="this.style.visibility = 'visible'"
-                                                onmouseout="this.style.visibility = 'hidden'; MM.validateAddress();">
-
-
-                                            </ul>
-                                        </div>
-
-                                        <div class="form-floating mb-3 pull-left">
-                                            Preferred Mode of Communication
-                                        </div>
-                                        <div class="form-floating mb-3 pull-left">
-                                            <div class="mb-3" style="width:20%;display:inline;">
-                                                <input class="form-check-input" type="checkbox" name="modeOfComm"
-                                                    value="sms" id="sms">
-                                                <label for="sms">
-                                                    SMS
-                                                </label>
-                                            </div>
-
-                                            <div class="mb-3" style="width:20%;display:inline;">
-                                                <input class="form-check-input" type="checkbox" name="modeOfComm"
-                                                    value="email" id="email">
-                                                <label for="email">
-                                                    Email
-                                                </label>
-                                            </div>
-                                            <div class="mb-3" style="width:20%;display:inline;">
-                                                <input class="form-check-input" type="checkbox" name="modeOfComm"
-                                                    value="" id="push">
-                                                <label for="push">
-                                                    Push
-                                                </label>
-                                            </div>
-
-
-                                        </div>
-                                        <br /><br />
-
-                                    </div>
-                                    <div class="redTxt" id="errorMessage"></div>
-                                    <div class="text-center">
-                                        <input type="submit" class="btn large-btn btn-primary space-above-sm"
-                                            id="valsubmit-button" tabindex="10"
-                                            style="display: block;margin-left: 60px !important;" value="Send Request"
-                                            accesskey="s" />
-                                    </div>
-
-
-
-                                </form>
-
-                            </div>
-                            <br />
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
-    <script src="../scripts/leadform.js"></script>
-    <script>
-
-
-        $("#mobileNumber").keypress(function (e) {
-            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-                return false;
-            }
-            var curchr = this.value.length;
-            var curval = $(this).val();
-            if (curchr == 3 && curval.indexOf("(") <= -1) {
-                $(this).val("(" + curval + ")" + " ");
-            } else if (curchr == 4 && curval.indexOf("(") > -1) {
-                $(this).val(curval + ") ");
-            } else if (curchr == 5 && curval.indexOf(")") > -1) {
-                $(this).val(curval + "-");
-            } else if (curchr == 9) {
-                $(this).val(curval + "-");
-                $(this).attr('maxlength', '14');
-            }
-        });
-
-
-        var timer, searchVal;
-        $('#address').on('keyup', function () {
-            $("#isAddressValid").val("false");
-            clearTimeout(timer);
-            var str = $(this).val();
-            if (str) {
-                document.getElementById("leadExistingAddress").style.visibility = "visible";
-                if (searchVal !== str) {
-                    timer = setTimeout(function () {
-                        searchVal = str;
-                        MM.pullAddressDetails();
-                    }, 400);
-                }
-            } else {
-                searchVal = "";
-                $("#leadExistingAddress").html("");
-
-                document.getElementById("leadExistingAddress").style.visibility = "hidden";
-            }
-        });
-
-        $(".form-control").on('click', function () {
-            $("#errorMessage").html("");
-        });
-
-
-        $('#address').on('click', function () {
-            document.getElementById("leadExistingAddress").style.visibility = "visible";
-
-        });
-        $('#address').on('focus', function () {
-            document.getElementById("leadExistingAddress").style.visibility = "visible";
-
-        });
-
-
-        $('#address').on('blur', function () {
-            MM.validateAddress();
-        });
-
-
-
-
-    </script>
 
 
 </body>
