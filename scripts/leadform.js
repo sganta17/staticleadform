@@ -255,8 +255,8 @@
 
             this.submitLead = function (event) {
                 event.preventDefault();
-
-                alert(window.frames[0].document.location.search);
+                const url = document.referrer;
+                alert(url);
                 let name = $("#name").val();
                 let mobileNumber = $("#mobileNumber").val();
                 let email = $("#email").val();
