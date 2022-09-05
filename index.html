@@ -44,7 +44,7 @@
                 <div class="container">
                     <div class="schedule-right col-lg-4 col-md-4 col-sm-12 col-md-push-8">
 
-                        <iframe src="https://master.d2y6rcpzjeev8u.amplifyapp.com/leadform.html"
+                        <iframe id="leadFormId" src="https://master.d2y6rcpzjeev8u.amplifyapp.com/leadform.html"
                             style="height: 500px;width:430px;"></iframe>
                     </div>
                 </div>
@@ -52,7 +52,10 @@
         </div>
     </main>
 
-
+    <script>
+        const iframe = document.getElementById('leadFormId');
+        iframe.src = iframe.src + window.location.search;
+    </script>
 </body>
 
 </html>
