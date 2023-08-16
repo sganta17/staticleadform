@@ -321,7 +321,7 @@
                     };
 
                     return $.ajax({
-                        url: "https://sm6i8t8xuk.execute-api.us-east-1.amazonaws.com/default/leadform",
+                        url: "https://laqlrn4ffb.execute-api.us-east-1.amazonaws.com/default/leadForm-Test",
                         type: "POST",
                         data: JSON.stringify(element),
                         contentType: "application/json;charset=utf-8",
